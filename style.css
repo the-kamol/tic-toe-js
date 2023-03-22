@@ -1,0 +1,83 @@
+:root {
+  --bodyBg: azure;
+  --borderSize: 2px;
+  --borderColor: maroon;
+  --squareBgColor: seashell;
+  --cellSize: 65px;
+  --cellBorderSize: 10px;
+  --crossColor: chocolate;
+  --circleColor: olive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vmin;
+  width: 100vmax;
+  margin: auto;
+  background-color: var(--bodyBg);
+}
+
+.squareWrap {
+  background-color: var(--squareBgColor);
+  border: var(--borderSize) solid var(--borderColor);
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(300px - var(--borderSize));
+}
+
+.cellEl {
+  width: calc(100px - var(--borderSize));
+  height: calc(100px - var(--borderSize));
+  border: var(--borderSize) solid var(--borderColor);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: var(--cellSize);
+  height: var(--cellSize);
+  border: var(--cellBorderSize) solid var(--circleColor);
+  border-radius: 50%;
+}
+
+.cross {
+  width: var(--cellSize);
+  height: var(--cellSize);
+  position: relative;
+  rotate: 45deg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cross:before,
+.cross:after {
+  content: '';
+  background-color: var(--crossColor);
+  width: 100%;
+  height: var(--cellBorderSize);
+  position: absolute;
+}
+
+.cross:before {
+  rotate: 90deg;
+}
+
+.info {
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 25px;
+}
